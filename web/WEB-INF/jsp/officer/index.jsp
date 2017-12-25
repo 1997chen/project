@@ -128,7 +128,7 @@
                             <a href="/officer/class_add1/16.action">新建班级</a>
                         </div>
                         <div class="panel-body">
-                            <a href="/officer/pro_list/16.action">班级列表</a>
+                            <a href="/officer/class_list/16.action">班级列表</a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     </div>
                     <div id="panel-element-qwerrr" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">录入</a>
+                            <a href="/plan/plan_add1/16.action">录入</a>
                         </div>
                         <div class="panel-body">
                             <a href="#">草稿箱</a>

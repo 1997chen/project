@@ -30,6 +30,35 @@ public class PlanController {
     private PlanService planService;
 
     /*
+    *
+    * */
+    /*@RequestMapping(value = "/allPro_list")
+    private String allPro_list(Model model){
+
+    }*/
+    /*
+    *   获得所有方案的年度
+    * */
+    @RequestMapping(value = "/allYear_list")
+    private String allYear_list(Model model) {
+        list = planService.getPlanYears();
+        model.addAttribute("years", list);
+        return "plan/allYear_list";
+    }
+
+    /*
+    *   超管通过年度查看方案列表
+    * */
+
+    @RequestMapping(value = "/allPlan_listByYear/{year}")
+    private String allPlan_listByYear(Model model,@PathVariable("year") int year){
+        list=planService.getPlanByYear(year);
+        model.addAttribute("plans",list);
+        model.addAttribute("userState",0);
+        return "plan/plan_listByYear";
+    }
+
+    /*
      *   该方法对超管以外其他的人有效
      * */
     @RequestMapping(value = "/pro_list/{id}")
@@ -92,5 +121,14 @@ public class PlanController {
         model.addAttribute("plan",plan);
         model.addAttribute("userState",user.getState());
         return "plan/plan_show";
+    }
+    /*
+    *   方案添加页面的显示
+    *   @Param
+    *   id是教研室主任的id
+    * */
+    @RequestMapping(value = "/plan_add1/{id}")
+    private String plan_add1(Model model,@PathVariable("id") int id){
+        return "plan/plan_add";
     }
 }

@@ -16,6 +16,17 @@ public class PlanServiceImpl implements PlanService {
     private Plan plan;
     @Autowired
     private PlanDao planDao;
+
+    public ArrayList getPlanYears() {
+        list=planDao.getPlanYears();
+        return (ArrayList) list;
+    }
+
+    public ArrayList getPlanByYear(int year) {
+        list=planDao.getPlanByYear(year);
+        return (ArrayList) list;
+    }
+
     public Plan getPlanByPro_id(int id) {
         plan=planDao.getPlanByPro_id(id);
         return plan;

@@ -25,5 +25,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="javassist-3.18.1-GA" level="project" />
+    <orderEntry type="library" name="poi-scratchpad-3.17" level="project" />
   </component>
 </module>

@@ -78,18 +78,19 @@ public class OfficerController {
         }
     }
 
-    @RequestMapping(value = "/pro_list/{id}")
+    /*@RequestMapping(value = "/pro_list/{id}")
     private String pro_list(Model model, @PathVariable("id") int id) {
         user = userService.getUserById(id);
         list1 = professionService.getProsByDept_id(user.getDept_id());
         model.addAttribute("pros", list1);
         return "officer/pro_list";
-    }
+    }*/
 
-    @RequestMapping(value = "/class_list/{proId}")
-    private String class_list(Model model, @PathVariable("proId") int proId) {
-        list1 = class1Service.getClass1sByPro_id(proId);
-        model.addAttribute("pro", proId);
+    @RequestMapping(value = "/class_list/{id}")
+    private String class_list(Model model, @PathVariable("id") int id) {
+        user=userService.getUserById(id);
+        list1 = class1Service.getClass1sByPro_id(user.getPro_id());
+        model.addAttribute("proId", user.getPro_id());
         model.addAttribute("class1s", list1);
         return "officer/class_list";
     }
