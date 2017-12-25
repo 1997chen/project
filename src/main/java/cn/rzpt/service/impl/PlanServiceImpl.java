@@ -46,4 +46,19 @@ public class PlanServiceImpl implements PlanService {
         plan=planDao.getPlanById(id);
         return plan;
     }
+
+    public ArrayList getPlansByState(int state) {
+        list=planDao.getPlansByState(state);
+        return (ArrayList) list;
+    }
+
+    public int getStateById(int planId) {
+        int i=planDao.getStateById(planId);
+        return i;
+    }
+
+    public void updateState(int planId,int state) {
+        planDao.updateState(planId,state);
+    }
+
 }

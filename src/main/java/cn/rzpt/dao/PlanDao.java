@@ -47,4 +47,19 @@ public class PlanDao {
         list = hibernateTemplate.find("from Plan where id=?", id);
         return (Plan) list.get(0);
     }
+
+    public List getPlansByState(int state) {
+        list=hibernateTemplate.find("from Plan where state=?",state);
+        return list;
+    }
+
+    public int getStateById(int planId) {
+        list=hibernateTemplate.find("select state from Plan where id=?",planId);
+        String str=list.get(0).toString();
+        return Integer.parseInt(str);
+    }
+
+    public void updateState(int planId, int state) {
+        hibernateTemplate.find("update Plan set state=? where id=?",new Object[]{state,planId});
+    }
 }

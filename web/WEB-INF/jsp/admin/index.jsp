@@ -182,7 +182,7 @@
                     </div>
                     <div id="panel-element-qwerr" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <a href="#">待审核</a>
+                            <a href="/plan/unCheckByAdmin/{id}.action">待审核</a>
                         </div>
                         <div class="panel-body">
                             <a href="#">未通过</a>
